@@ -405,6 +405,39 @@
         word-break: break-all;
       }
 
+      .copy-stack {
+        display: grid;
+        gap: 10px;
+      }
+
+      .copy-button {
+        display: inline-flex;
+        min-height: 40px;
+        width: 120px;
+        align-items: center;
+        justify-content: center;
+        justify-self: end;
+        padding: 8px 14px;
+        border: 3px solid #000;
+        background: var(--green);
+        color: var(--ink);
+        cursor: pointer;
+        font-family: inherit;
+        font-size: 13px;
+        font-weight: 900;
+        box-shadow: 3px 3px 0 #000;
+      }
+
+      .copy-button:hover {
+        transform: translate(1px, 1px);
+        box-shadow: 2px 2px 0 #000;
+      }
+
+      .copy-button:focus-visible {
+        outline: 3px solid var(--blue);
+        outline-offset: 3px;
+      }
+
       .extensions-ui {
         display: grid;
         gap: 10px;
@@ -690,7 +723,17 @@
                   <span class="address">chrome://extensions</span>
                 </div>
                 <div class="shot-body">
-                  <div class="big-url">chrome://extensions</div>
+                  <div class="copy-stack">
+                    <div class="big-url">chrome://extensions</div>
+                    <button
+                      class="copy-button"
+                      type="button"
+                      data-copy-text="chrome://extensions"
+                      aria-label="Copy chrome://extensions"
+                    >
+                      COPY
+                    </button>
+                  </div>
                 </div>
               </div>
               <p class="step-copy">Paste this address into the browser bar and press Enter.</p>
@@ -761,5 +804,41 @@
         <span class="status">READY</span>
       </div>
     </div>
+    <script>
+      const copyButtons = document.querySelectorAll("[data-copy-text]");
+
+      copyButtons.forEach((button) => {
+        button.addEventListener("click", async () => {
+          const text = button.dataset.copyText;
+          const originalLabel = button.textContent.trim();
+
+          try {
+            if (navigator.clipboard && window.isSecureContext) {
+              await navigator.clipboard.writeText(text);
+            } else {
+              const input = document.createElement("textarea");
+              input.value = text;
+              input.setAttribute("readonly", "");
+              input.style.position = "fixed";
+              input.style.opacity = "0";
+              document.body.append(input);
+              input.select();
+              document.execCommand("copy");
+              input.remove();
+            }
+
+            button.textContent = "COPIED";
+            window.setTimeout(() => {
+              button.textContent = originalLabel;
+            }, 1400);
+          } catch {
+            button.textContent = "COPY FAILED";
+            window.setTimeout(() => {
+              button.textContent = originalLabel;
+            }, 1400);
+          }
+        });
+      });
+    </script>
   </body>
 </html>
