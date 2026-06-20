@@ -1,0 +1,276 @@
+.gmv-verified-badge {
+  align-items: center;
+  cursor: pointer;
+  display: inline-flex;
+  flex: 0 0 auto;
+  height: 1em;
+  justify-content: center;
+  margin-left: 4px;
+  outline: none;
+  position: relative;
+  vertical-align: -0.125em;
+  width: 1em;
+  z-index: 1;
+}
+
+.gmv-verified-badge--normal {
+  font-size: 1.05em;
+}
+
+.gmv-verified-badge--large {
+  font-size: 0.68em;
+  margin-left: 8px;
+}
+
+.gmv-verified-badge--small {
+  font-size: 0.95em;
+}
+
+.gmv-verified-badge:focus-visible {
+  border-radius: 999px;
+  box-shadow: 0 0 0 3px rgba(29, 155, 240, 0.38);
+}
+
+.gmv-verified-svg {
+  display: block;
+  height: 100%;
+  pointer-events: none;
+  width: 100%;
+}
+
+.gmv-popover {
+  background: rgb(20, 20, 20);
+  border-radius: 16px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2), 0 0 3px 1px rgba(255, 255, 255, 0.15);
+  box-sizing: border-box;
+  color: rgb(231, 233, 234);
+  display: none;
+  font-family: TwitterChirp, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  left: 0;
+  max-width: calc(100vw - 16px);
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  width: 360px;
+  z-index: 2147483647;
+}
+
+.gmv-popover--visible {
+  display: block;
+}
+
+.gmv-popover__title {
+  color: rgb(231, 233, 234);
+  font-size: 23px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 28px;
+  margin: 0 0 12px;
+}
+
+.gmv-popover__row {
+  align-items: flex-start;
+  display: flex;
+  gap: 12px;
+  min-height: 20px;
+}
+
+.gmv-popover__row + .gmv-popover__row {
+  margin-top: 12px;
+}
+
+.gmv-popover__icon {
+  align-items: center;
+  color: rgb(231, 233, 234);
+  display: inline-flex;
+  flex: 0 0 21px;
+  height: 21px;
+  justify-content: center;
+  width: 21px;
+}
+
+.gmv-popover__icon--blue {
+  height: 21px;
+  width: 21px;
+}
+
+.gmv-popover__icon--calendar svg {
+  display: block;
+  height: 21px;
+  width: 21px;
+}
+
+.gmv-popover__icon--calendar path {
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2.2;
+}
+
+.gmv-popover__text {
+  align-items: baseline;
+  color: rgb(113, 118, 123);
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 15px;
+  font-weight: 400;
+  gap: 4px;
+  letter-spacing: 0;
+  line-height: 20px;
+}
+
+.gmv-popover__text a {
+  color: rgb(0, 186, 124);
+  text-decoration: none;
+}
+
+.gmv-popover__text a:hover {
+  text-decoration: underline;
+}
+
+.gmv-about-row {
+  align-items: center;
+  background: rgb(0, 0, 0);
+  border-left: 1px solid rgb(47, 51, 54);
+  border-right: 1px solid rgb(47, 51, 54);
+  box-sizing: border-box;
+  color: rgb(231, 233, 234);
+  display: flex;
+  font-family: TwitterChirp, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  min-height: 64px;
+  padding: 12px 16px;
+  text-decoration: none;
+  width: 100%;
+}
+
+.gmv-about-row:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.gmv-about-row__icon {
+  align-items: center;
+  color: rgb(231, 233, 234);
+  display: inline-flex;
+  flex: 0 0 24px;
+  height: 24px;
+  justify-content: center;
+  margin-right: 16px;
+  width: 24px;
+}
+
+.gmv-about-row__copy {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.gmv-about-row__title {
+  color: rgb(231, 233, 234);
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 20px;
+}
+
+.gmv-about-row__subtitle {
+  color: rgb(113, 118, 123);
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 20px;
+  margin-top: 0;
+}
+
+.gmv-about-row__chevron {
+  color: rgb(113, 118, 123);
+  flex: 0 0 31px;
+  height: 19px;
+  margin-left: 16px;
+  width: 31px;
+}
+
+.gmv-about-row__chevron svg {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.gmv-about-row__chevron path {
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2.4;
+}
+
+.gmv-hover-verified-row {
+  align-items: center;
+  box-sizing: border-box;
+  color: rgb(231, 233, 234);
+  display: flex;
+  font-family: TwitterChirp, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  min-height: 48px;
+  padding: 12px 16px;
+  text-decoration: none;
+  width: 100%;
+}
+
+.gmv-hover-verified-row:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.gmv-hover-verified-row__icon {
+  align-items: center;
+  color: rgb(231, 233, 234);
+  display: inline-flex;
+  flex: 0 0 24px;
+  height: 24px;
+  justify-content: center;
+  margin-right: 16px;
+  width: 24px;
+}
+
+.gmv-hover-verified-row__text {
+  color: rgb(113, 118, 123);
+  flex: 1 1 auto;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 16px;
+  min-width: 0;
+}
+
+.gmv-hover-verified-row__chevron {
+  color: rgb(113, 118, 123);
+  flex: 0 0 31px;
+  height: 19px;
+  margin-left: 12px;
+  width: 31px;
+}
+
+.gmv-hover-verified-row__chevron svg {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.gmv-hover-verified-row__chevron path {
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2.4;
+}
+
+@media (max-width: 520px) {
+  .gmv-popover {
+    width: calc(100vw - 32px);
+  }
+
+  .gmv-about-row {
+    min-height: 64px;
+    padding: 12px 16px;
+  }
+}
